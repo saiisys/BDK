@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MvcDemoRestorent.DB
+namespace BDK.DB
 {
     using System;
     using System.Collections.Generic;

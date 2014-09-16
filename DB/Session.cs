@@ -7,11 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MvcDemoRestorent.DB
+namespace BDK.DB
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class Session
     {
@@ -24,18 +23,9 @@ namespace MvcDemoRestorent.DB
         }
     
         public int SessionId { get; set; }
-
-
-        [Display(Name = "Session Name Full")]
-        [Required]
         public string SessionName { get; set; }
-
-        [Display(Name = "Start Date")]
-        [DataType(DataType.Date)]      
-        public System.DateTime Startdate { get; set; }
-
-
-        public System.DateTime EndingDate { get; set; }
+        public Nullable<System.DateTime> Startdate { get; set; }
+        public Nullable<System.DateTime> EndingDate { get; set; }
         public bool DefaultIndic { get; set; }
         public bool OpenIndic { get; set; }
         public string UpdateBy { get; set; }

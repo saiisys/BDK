@@ -22,10 +22,6 @@
             <End Role="Session" EntitySet="Session" />
             <End Role="CAST" EntitySet="CAST" />
           </AssociationSet>
-          <AssociationSet Name="Class_CoursesType_FK" Association="CollegeDBModel.Store.Class_CoursesType_FK">
-            <End Role="CoursesType" EntitySet="CoursesType" />
-            <End Role="Class" EntitySet="Class" />
-          </AssociationSet>
           <AssociationSet Name="ClassFeeDetails_Class_FK" Association="CollegeDBModel.Store.ClassFeeDetails_Class_FK">
             <End Role="Class" EntitySet="Class" />
             <End Role="ClassFeeDetails" EntitySet="ClassFeeDetails" />
@@ -117,7 +113,6 @@
           <Property Name="UpdateBy" Type="varchar" MaxLength="500" />
           <Property Name="UpdateDate" Type="datetime" />
           <Property Name="CoursesID" Type="int" Nullable="false" />
-          <Property Name="CoursesType_Sessionname" Type="varchar" Nullable="false" MaxLength="500" />
         </EntityType>
         <EntityType Name="ClassFeeDetails">
           <Key>
@@ -291,20 +286,6 @@
             </Principal>
             <Dependent Role="CAST">
               <PropertyRef Name="Sessionname" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="Class_CoursesType_FK">
-          <End Role="CoursesType" Type="CollegeDBModel.Store.CoursesType" Multiplicity="1" />
-          <End Role="Class" Type="CollegeDBModel.Store.Class" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CoursesType">
-              <PropertyRef Name="ID" />
-              <PropertyRef Name="Sessionname" />
-            </Principal>
-            <Dependent Role="Class">
-              <PropertyRef Name="CoursesID" />
-              <PropertyRef Name="CoursesType_Sessionname" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -543,7 +524,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CollegeDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="CollegeDBEntities1" p1:LazyLoadingEnabled="true">
+        <EntityContainer Name="CollegeDBEntities" p1:LazyLoadingEnabled="true">
           <EntitySet Name="CASTs" EntityType="CollegeDBModel.CAST" />
           <EntitySet Name="Classes" EntityType="CollegeDBModel.Class" />
           <EntitySet Name="ClassFeeDetails" EntityType="CollegeDBModel.ClassFeeDetail" />
@@ -563,10 +544,6 @@
           <AssociationSet Name="Registration_Cast_FK" Association="CollegeDBModel.Registration_Cast_FK">
             <End Role="CAST" EntitySet="CASTs" />
             <End Role="Registration" EntitySet="Registrations" />
-          </AssociationSet>
-          <AssociationSet Name="Class_CoursesType_FK" Association="CollegeDBModel.Class_CoursesType_FK">
-            <End Role="CoursesType" EntitySet="CoursesTypes" />
-            <End Role="Class" EntitySet="Classes" />
           </AssociationSet>
           <AssociationSet Name="ClassFeeDetails_Class_FK" Association="CollegeDBModel.ClassFeeDetails_Class_FK">
             <End Role="Class" EntitySet="Classes" />
@@ -657,8 +634,6 @@
           <Property Name="UpdateBy" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
           <Property Name="UpdateDate" Type="DateTime" Precision="3" />
           <Property Name="CoursesID" Type="Int32" Nullable="false" />
-          <Property Name="CoursesType_Sessionname" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="CoursesType" Relationship="CollegeDBModel.Class_CoursesType_FK" FromRole="Class" ToRole="CoursesType" />
           <NavigationProperty Name="ClassFeeDetails" Relationship="CollegeDBModel.ClassFeeDetails_Class_FK" FromRole="Class" ToRole="ClassFeeDetails" />
           <NavigationProperty Name="FeeSettings" Relationship="CollegeDBModel.FeeSetting_Class_FK" FromRole="Class" ToRole="FeeSetting" />
           <NavigationProperty Name="Registrations" Relationship="CollegeDBModel.Registration_Class_FK" FromRole="Class" ToRole="Registration" />
@@ -695,7 +670,6 @@
           <Property Name="Sessionname" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
           <Property Name="UpdateBy" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
           <Property Name="UpdateDate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Classes" Relationship="CollegeDBModel.Class_CoursesType_FK" FromRole="CoursesType" ToRole="Class" />
           <NavigationProperty Name="Session" Relationship="CollegeDBModel.CoursesType_Session_FK" FromRole="CoursesType" ToRole="Session" />
         </EntityType>
         <EntityType Name="ExtraCertificate">
@@ -881,20 +855,6 @@
             <Dependent Role="Registration">
               <PropertyRef Name="CastId" />
               <PropertyRef Name="SessionName" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="Class_CoursesType_FK">
-          <End Role="CoursesType" Type="CollegeDBModel.CoursesType" Multiplicity="1" />
-          <End Role="Class" Type="CollegeDBModel.Class" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CoursesType">
-              <PropertyRef Name="ID" />
-              <PropertyRef Name="Sessionname" />
-            </Principal>
-            <Dependent Role="Class">
-              <PropertyRef Name="CoursesID" />
-              <PropertyRef Name="CoursesType_Sessionname" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1119,7 +1079,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="CollegeDBModelStoreContainer" CdmEntityContainer="CollegeDBEntities1">
+        <EntityContainerMapping StorageEntityContainer="CollegeDBModelStoreContainer" CdmEntityContainer="CollegeDBEntities">
           <EntitySetMapping Name="CASTs">
             <EntityTypeMapping TypeName="CollegeDBModel.CAST">
               <MappingFragment StoreEntitySet="CAST">
@@ -1140,7 +1100,6 @@
                 <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
                 <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
                 <ScalarProperty Name="CoursesID" ColumnName="CoursesID" />
-                <ScalarProperty Name="CoursesType_Sessionname" ColumnName="CoursesType_Sessionname" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

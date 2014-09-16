@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace MvcDemoRestorent
+namespace BDK
 {
     public static class WebApiConfig
     {

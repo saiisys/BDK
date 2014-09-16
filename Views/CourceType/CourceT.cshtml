@@ -1,0 +1,143 @@
+﻿@model BDK.DB.CoursesType
+
+@{
+    ViewBag.Title = "CourceType";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="box span12">
+					<div class="box-header well" data-original-title>
+						<h2><i class="icon-edit"></i> Form Elements</h2>
+						<div class="box-icon">
+							<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
+							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
+							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+						</div>
+					</div>
+
+@using (Html.BeginForm("Save", "CourceType", FormMethod.Post)) {
+     @Html.AntiForgeryToken()    
+					<div class="box-content">
+						
+						  <fieldset>
+							
+							<div class="control-group">
+							  <label class="control-label" for="typeahead">
+                                  Course Name:
+							  </label>
+							  <div class="controls">
+								@*<input type="text" class="span6 typeahead" id="SName" value="@Model.SessionName">*@
+                                  @Html.TextBoxFor(m => m.CoursesName , new {@class="span6 typeahead", id="cname" })
+							  </div>
+
+                                <label class="control-label" for="typeahead">
+                                  10th %:
+							  </label>
+							  <div class="controls">
+								@*<input type="text" class="span6 typeahead" id="SName" value="@Model.SessionName">*@
+                                  @Html.TextBoxFor(m => m.C10PerCount , new {@class="span6 typeahead" })
+							  </div>
+                                <label class="control-label" for="typeahead">
+                                  12th %:
+							  </label>
+							  <div class="controls">
+								@*<input type="text" class="span6 typeahead" id="SName" value="@Model.SessionName">*@
+                                  @Html.TextBoxFor(m => m.C12PerCount , new {@class="span6 typeahead" })
+							  </div>
+
+                                 <label class="control-label" for="typeahead">
+                                  Graducation %:
+							  </label>
+							  <div class="controls">
+								@*<input type="text" class="span6 typeahead" id="SName" value="@Model.SessionName">*@
+                                  @Html.TextBoxFor(m => m.GraducationPerCount , new {@class="span6 typeahead" })
+							  </div>
+                                 <label class="control-label" for="typeahead">
+                                  Extra Max %:
+							  </label>
+							  <div class="controls">
+								@*<input type="text" class="span6 typeahead" id="SName" value="@Model.SessionName">*@
+                                  @Html.TextBoxFor(m => m.ExtraMaxPer , new {@class="span6 typeahead" })
+							  </div>
+
+                                 @Html.HiddenFor(m => m.Sessionname)
+                                @Html.HiddenFor( m => m.ID)
+
+
+                                  
+							</div>
+							
+							
+							
+							<div class="form-actions">
+							  <button type="submit" class="btn btn-primary">Save changes</button>
+							  <button type="reset" class="btn">Cancel</button>
+							</div>
+						  </fieldset>
+						@*</form>*@   
+
+                        
+					</div>
+                            
+			
+}
+ 
+    </div>
+
+
+
+<div class="box span12">
+					<div class="box-header well" data-original-title>
+						<h2><i class="icon-user"></i> Members</h2>
+						<div class="box-icon">
+							<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
+							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
+							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+						</div>
+					</div>
+					<div class="box-content">
+						<table class="table table-striped table-bordered bootstrap-datatable datatable">
+						  <thead>
+							  <tr>
+								  <th>Courses Name</th>
+								  <th>10th %</th>
+                                  <th>12th %</th>
+                                  <th>Graducation %</th>
+                                  <th>Extra Max %</th>
+                                   <th>Action</th>
+							  </tr>
+						  </thead>   
+						  <tbody>
+							
+
+								@foreach (var obj in ViewBag.coursesTab)
+        {<tr>
+            <td class="center">@obj.CoursesName</td>
+        			<td class="center">@obj.C10PerCount</td>
+
+            <td class="center">@obj.C12PerCount</td>
+            <td class="center">@obj.GraducationPerCount</td>
+            <td class="center">@obj.ExtraMaxPer</td>
+      
+
+								<td class="center">
+									
+									<a class="btn btn-info" href="@Url.Action("Edit", new {id = obj.ID})">
+										<i class="icon-edit icon-white"></i>  
+										Edit                                            
+									</a>
+									<a class="btn btn-danger" href="#">
+										<i class="icon-trash icon-white"></i> 
+										Delete
+									</a>
+								</td>
+							</tr>
+        }
+							
+							
+							
+						  </tbody>
+					  </table>            
+					</div>
+				</div>

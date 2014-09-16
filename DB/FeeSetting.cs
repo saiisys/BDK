@@ -7,11 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MvcDemoRestorent.DB
+namespace BDK.DB
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class FeeSetting
     {
@@ -22,7 +21,6 @@ namespace MvcDemoRestorent.DB
         public string Operation { get; set; }
         public Nullable<int> Amount { get; set; }
         public string MaxLimit { get; set; }
-    [Required]
         public string SessionName { get; set; }
     
         public virtual Class Class { get; set; }

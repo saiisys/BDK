@@ -7,18 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MvcDemoRestorent.DB
+namespace BDK.DB
 {
     using System;
     using System.Collections.Generic;
     
     public partial class CoursesType
     {
-        public CoursesType()
-        {
-            this.Classes = new HashSet<Class>();
-        }
-    
+
         public int ID { get; set; }
         public string CoursesName { get; set; }
         public Nullable<decimal> C10PerCount { get; set; }
@@ -29,7 +25,6 @@ namespace MvcDemoRestorent.DB
         public string UpdateBy { get; set; }
         public Nullable<System.DateTime> UpdateDate { get; set; }
     
-        public virtual ICollection<Class> Classes { get; set; }
         public virtual Session Session { get; set; }
     }
 }

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MvcDemoRestorent.DB
+namespace BDK.DB
 {
     using System;
     using System.Data.Entity;
@@ -16,7 +16,7 @@ namespace MvcDemoRestorent.DB
     public partial class CollegeDBEntities : DbContext
     {
         public CollegeDBEntities()
-            : base("name=CollegeDBEntities1")
+            : base("name=CollegeDBEntities")
         {
         }
     

@@ -11,7 +11,7 @@
     <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MvcDemoRestorent</RootNamespace>
+    <RootNamespace>BDK</RootNamespace>
     <AssemblyName>MvcDemoRestorent</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
@@ -164,58 +164,60 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CastController.cs" />
+    <Compile Include="Controllers\ClassController.cs" />
+    <Compile Include="Controllers\CourceTypeController.cs" />
     <Compile Include="Controllers\CPanalIndexController.cs" />
     <Compile Include="Controllers\SessionController.cs" />
     <Compile Include="DB\CAST.cs">
-      <DependentUpon>CollegeDBEntity.tt</DependentUpon>
+      <DependentUpon>CollegeDBEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Class.cs">
-      <DependentUpon>CollegeDBEntity.tt</DependentUpon>
+      <DependentUpon>CollegeDBEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\ClassFeeDetail.cs">
-      <DependentUpon>CollegeDBEntity.tt</DependentUpon>
+      <DependentUpon>CollegeDBEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\CollegeDBEntity.Context.cs">
+    <Compile Include="DB\CollegeDBEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CollegeDBEntity.Context.tt</DependentUpon>
+      <DependentUpon>CollegeDBEntities.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\CollegeDBEntity.cs">
+    <Compile Include="DB\CollegeDBEntities.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CollegeDBEntity.tt</DependentUpon>
+      <DependentUpon>CollegeDBEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\CollegeDBEntity.Designer.cs">
+    <Compile Include="DB\CollegeDBEntities.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CollegeDBEntity.edmx</DependentUpon>
+      <DependentUpon>CollegeDBEntities.edmx</DependentUpon>
     </Compile>
     <Compile Include="DB\CoursesType.cs">
-      <DependentUpon>CollegeDBEntity.tt</DependentUpon>
+      <DependentUpon>CollegeDBEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\ExtraCertificate.cs">
-      <DependentUpon>CollegeDBEntity.tt</DependentUpon>
+      <DependentUpon>CollegeDBEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\FeeGroup.cs">
-      <DependentUpon>CollegeDBEntity.tt</DependentUpon>
+      <DependentUpon>CollegeDBEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\FeeHead.cs">
-      <DependentUpon>CollegeDBEntity.tt</DependentUpon>
+      <DependentUpon>CollegeDBEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\FeeSetting.cs">
-      <DependentUpon>CollegeDBEntity.tt</DependentUpon>
+      <DependentUpon>CollegeDBEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Registration.cs">
-      <DependentUpon>CollegeDBEntity.tt</DependentUpon>
+      <DependentUpon>CollegeDBEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Session.cs">
-      <DependentUpon>CollegeDBEntity.tt</DependentUpon>
+      <DependentUpon>CollegeDBEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\User.cs">
-      <DependentUpon>CollegeDBEntity.tt</DependentUpon>
+      <DependentUpon>CollegeDBEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\UserProfile.cs">
-      <DependentUpon>CollegeDBEntity.tt</DependentUpon>
+      <DependentUpon>CollegeDBEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -532,24 +534,26 @@
     <Content Include="Scripts\jquery.uniform.min.js" />
     <Content Include="Scripts\jquery.uploadify-3.1.min.js" />
     <Content Include="Views\CPanalIndex\dashboard.cshtml" />
-    <EntityDeploy Include="DB\CollegeDBEntity.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CollegeDBEntity.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="DB\CollegeDBEntity.edmx.diagram">
-      <DependentUpon>CollegeDBEntity.edmx</DependentUpon>
-    </Content>
-    <Content Include="DB\CollegeDBEntity.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CollegeDBEntity.Context.cs</LastGenOutput>
-      <DependentUpon>CollegeDBEntity.edmx</DependentUpon>
-    </Content>
-    <Content Include="DB\CollegeDBEntity.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CollegeDBEntity.cs</LastGenOutput>
-      <DependentUpon>CollegeDBEntity.edmx</DependentUpon>
-    </Content>
     <Content Include="Views\Cast\Index.cshtml" />
+    <Content Include="Views\Class\Class.cshtml" />
+    <Content Include="Views\CourceType\CourceT.cshtml" />
+    <EntityDeploy Include="DB\CollegeDBEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CollegeDBEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DB\CollegeDBEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CollegeDBEntities.edmx</DependentUpon>
+      <LastGenOutput>CollegeDBEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DB\CollegeDBEntities.edmx.diagram">
+      <DependentUpon>CollegeDBEntities.edmx</DependentUpon>
+    </Content>
+    <Content Include="DB\CollegeDBEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CollegeDBEntities.edmx</DependentUpon>
+      <LastGenOutput>CollegeDBEntities.cs</LastGenOutput>
+    </Content>
     <None Include="Views\CPanalIndex\Index.cshtml" />
     <Content Include="Views\Session\Index.cshtml">
       <SubType>Code</SubType>

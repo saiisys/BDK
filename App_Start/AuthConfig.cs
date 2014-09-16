@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.Web.WebPages.OAuth;
 //using MvcDemoRestorent.Models;
 
-namespace MvcDemoRestorent
+namespace BDK
 {
     public static class AuthConfig
     {

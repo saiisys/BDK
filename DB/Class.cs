@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MvcDemoRestorent.DB
+namespace BDK.DB
 {
     using System;
     using System.Collections.Generic;
@@ -29,9 +29,7 @@ namespace MvcDemoRestorent.DB
         public string UpdateBy { get; set; }
         public Nullable<System.DateTime> UpdateDate { get; set; }
         public int CoursesID { get; set; }
-        public string CoursesType_Sessionname { get; set; }
     
-        public virtual CoursesType CoursesType { get; set; }
         public virtual ICollection<ClassFeeDetail> ClassFeeDetails { get; set; }
         public virtual ICollection<FeeSetting> FeeSettings { get; set; }
         public virtual ICollection<Registration> Registrations { get; set; }

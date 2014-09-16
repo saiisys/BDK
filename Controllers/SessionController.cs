@@ -4,15 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-using MvcDemoRestorent.Models;
-using MvcDemoRestorent.DB;
-namespace MvcDemoRestorent.Controllers
+using BDK.Models;
+using BDK.DB;
+namespace BDK.Controllers
 {
     public class SessionController : Controller
     {
         CollegeDBEntities db = new CollegeDBEntities();
         IEnumerable<Session> lsession;
-         
+
+        [Authorize]
         public ActionResult Index()
         {
             if (Session["User"] == null)
@@ -34,6 +35,7 @@ namespace MvcDemoRestorent.Controllers
         //    ModelState.Clear();
         //    return PartialView("SessionGridP", lsession);
         //}
+        [Authorize]
         [HttpPost]
         public ActionResult Save(Session objses)
         {
@@ -70,7 +72,7 @@ namespace MvcDemoRestorent.Controllers
             
         }
 
-
+        [Authorize]
         public ActionResult EditSession(int id)
         {
            

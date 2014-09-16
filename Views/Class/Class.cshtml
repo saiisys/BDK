@@ -1,8 +1,9 @@
-﻿@model BDK.DB.CAST
+﻿@model BDK.DB.Class 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Class";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 
 <div class="box span12">
 					<div class="box-header well" data-original-title>
@@ -14,7 +15,7 @@
 						</div>
 					</div>
 
-@using (Html.BeginForm("Save", "Cast", FormMethod.Post)) {
+@using (Html.BeginForm("Save", "Class", FormMethod.Post)) {
      @Html.AntiForgeryToken()    
 					<div class="box-content">
 						
@@ -22,12 +23,14 @@
 							@Html.ValidationSummary()
 							<div class="control-group">
 							  <label class="control-label" for="typeahead">
-                                  @Html.LabelFor(m=> m.CastName ) 
+                                 Class Name
 							  </label>
 							  <div class="controls">
 								@*<input type="text" class="span6 typeahead" id="SName" value="@Model.SessionName">*@
-                                  @Html.TextBoxFor(m => m.CastName , new {@class="span6 typeahead", id="cname" })
-                                   @Html.ValidationMessageFor(m=>m.CastName ,"*")
+                                  @Html.TextBoxFor(m => m.ClassName  , new {@class="span6 typeahead", id="cname" })
+                                  
+
+                                  
 
 							  </div>
                                   @Html.HiddenFor(m => m.CastId )

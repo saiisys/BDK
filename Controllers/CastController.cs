@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using MvcDemoRestorent.DB;
+using BDK.DB;
 
 
 
-namespace MvcDemoRestorent.Controllers
+namespace BDK.Controllers
 {
+      [Authorize]
     public class CastController : Controller
     {
         //
         // GET: /Cast/
         CollegeDBEntities db = new CollegeDBEntities();
        
-        
+      
         public ActionResult Index()
         {
             if (Session["User"] == null)
@@ -24,10 +25,10 @@ namespace MvcDemoRestorent.Controllers
 
             }
      
-            ViewBag.CastList = db.CASTs.ToList();
+            ViewBag.CastList = db.CASTs.OrderBy(x=>x.CastId).ToList();
             return View();
         }
-
+      
         public ActionResult Save (CAST obj)
         { 
          
@@ -52,20 +53,20 @@ namespace MvcDemoRestorent.Controllers
               }
               db.SaveChanges();
               ModelState.Clear();
-            
-              ViewBag.CastList = db.CASTs.ToList();
+
+              ViewBag.CastList = db.CASTs.OrderBy(x => x.CastId).ToList();
           }
          
          
           return View("Index");
         }
-
+     
         public ActionResult EditCast(int Id)
         {
             CAST _cast = db.CASTs.SingleOrDefault(s => s.CastId == Id);
 
 
-            ViewBag.CastList = db.CASTs.ToList();
+            ViewBag.CastList = db.CASTs.OrderBy(x => x.CastId).ToList();
 
             return View("Index", _cast);
         }

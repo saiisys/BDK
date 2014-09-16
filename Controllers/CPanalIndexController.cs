@@ -4,12 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.SessionState;
-using MvcDemoRestorent.Models;
-using MvcDemoRestorent.DB;
-namespace MvcDemoRestorent.Controllers.Cpanal
+using BDK.Models;
+using BDK.DB;
+using System.Web.Security;
+namespace BDK.Controllers.Cpanal
 {
+
     public class CPanalIndexController : Controller
     {
+
         public ActionResult Index()
         {
             
@@ -29,6 +32,7 @@ namespace MvcDemoRestorent.Controllers.Cpanal
                 Session["User"] = (Request["username"].ToString());
                 //globalvar.globallogin = Session["User"].ToString();
                 //TempData["user"] = globalvar.globallogin;
+                FormsAuthentication.SetAuthCookie(Session["User"].ToString(), false); 
 
                 return View("dashboard");
             }
@@ -42,8 +46,10 @@ namespace MvcDemoRestorent.Controllers.Cpanal
 
         public ActionResult Logout()
         {
+
             Session.Abandon();
             Session.Clear();
+            FormsAuthentication.SignOut();
             return View("Index");
         }
 
@@ -52,7 +58,7 @@ namespace MvcDemoRestorent.Controllers.Cpanal
         //{
         //    return View("Category");
         //}
-
+        [Authorize]
         public ActionResult Deshboard()
         {
             return View("dashboard");

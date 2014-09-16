@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0d350943b28f4ea4a43958d0fa68756b" Name="Diagram1">
+        <EntityTypeShape EntityType="CollegeDBModel.CAST" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollegeDBModel.Class" Width="1.5" PointX="0.75" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollegeDBModel.ClassFeeDetail" Width="1.5" PointX="3.75" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollegeDBModel.CoursesType" Width="1.5" PointX="1.5" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollegeDBModel.ExtraCertificate" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollegeDBModel.FeeGroup" Width="1.5" PointX="1.5" PointY="30.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollegeDBModel.FeeHead" Width="1.5" PointX="1.5" PointY="26.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollegeDBModel.FeeSetting" Width="1.5" PointX="6.75" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollegeDBModel.Registration" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollegeDBModel.Session" Width="1.5" PointX="1.375" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollegeDBModel.UserProfile" Width="1.5" PointX="5.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollegeDBModel.User" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="CollegeDBModel.Cast_Session_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeDBModel.Registration_Cast_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeDBModel.Class_CoursesType_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeDBModel.ClassFeeDetails_Class_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeDBModel.FeeSetting_Class_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeDBModel.Registration_Class_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeDBModel.ClassFeeDetails_FeeHead_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeDBModel.ClassFeeDetails_Session_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeDBModel.CoursesType_Session_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeDBModel.Registration_ExtraCertificates_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeDBModel.Registration_ExtraCertificates_FKv1" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeDBModel.Registration_ExtraCertificates_FKv2" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeDBModel.Registration_ExtraCertificates_FKv4" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeDBModel.Registration_ExtraCertificates_FKv5" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeDBModel.FeeHead_FeeGroup_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeDBModel.FeeSetting_FeeHead_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeDBModel.FeeSetting_FeeHead_FKv1" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeDBModel.FeeSetting_Session_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeDBModel.FK_Users_UserProfile" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

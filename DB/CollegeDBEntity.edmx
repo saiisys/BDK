@@ -1,0 +1,1328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CollegeDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="CollegeDBModelStoreContainer">
+          <EntitySet Name="CAST" EntityType="CollegeDBModel.Store.CAST" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Class" EntityType="CollegeDBModel.Store.Class" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ClassFeeDetails" EntityType="CollegeDBModel.Store.ClassFeeDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CoursesType" EntityType="CollegeDBModel.Store.CoursesType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ExtraCertificates" EntityType="CollegeDBModel.Store.ExtraCertificates" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FeeGroup" EntityType="CollegeDBModel.Store.FeeGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FeeHead" EntityType="CollegeDBModel.Store.FeeHead" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FeeSetting" EntityType="CollegeDBModel.Store.FeeSetting" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Registration" EntityType="CollegeDBModel.Store.Registration" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Session" EntityType="CollegeDBModel.Store.Session" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserProfile" EntityType="CollegeDBModel.Store.UserProfile" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Users" EntityType="CollegeDBModel.Store.Users" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="Cast_Session_FK" Association="CollegeDBModel.Store.Cast_Session_FK">
+            <End Role="Session" EntitySet="Session" />
+            <End Role="CAST" EntitySet="CAST" />
+          </AssociationSet>
+          <AssociationSet Name="Class_CoursesType_FK" Association="CollegeDBModel.Store.Class_CoursesType_FK">
+            <End Role="CoursesType" EntitySet="CoursesType" />
+            <End Role="Class" EntitySet="Class" />
+          </AssociationSet>
+          <AssociationSet Name="ClassFeeDetails_Class_FK" Association="CollegeDBModel.Store.ClassFeeDetails_Class_FK">
+            <End Role="Class" EntitySet="Class" />
+            <End Role="ClassFeeDetails" EntitySet="ClassFeeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="ClassFeeDetails_FeeHead_FK" Association="CollegeDBModel.Store.ClassFeeDetails_FeeHead_FK">
+            <End Role="FeeHead" EntitySet="FeeHead" />
+            <End Role="ClassFeeDetails" EntitySet="ClassFeeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="ClassFeeDetails_Session_FK" Association="CollegeDBModel.Store.ClassFeeDetails_Session_FK">
+            <End Role="Session" EntitySet="Session" />
+            <End Role="ClassFeeDetails" EntitySet="ClassFeeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="CoursesType_Session_FK" Association="CollegeDBModel.Store.CoursesType_Session_FK">
+            <End Role="Session" EntitySet="Session" />
+            <End Role="CoursesType" EntitySet="CoursesType" />
+          </AssociationSet>
+          <AssociationSet Name="FeeHead_FeeGroup_FK" Association="CollegeDBModel.Store.FeeHead_FeeGroup_FK">
+            <End Role="FeeGroup" EntitySet="FeeGroup" />
+            <End Role="FeeHead" EntitySet="FeeHead" />
+          </AssociationSet>
+          <AssociationSet Name="FeeSetting_Class_FK" Association="CollegeDBModel.Store.FeeSetting_Class_FK">
+            <End Role="Class" EntitySet="Class" />
+            <End Role="FeeSetting" EntitySet="FeeSetting" />
+          </AssociationSet>
+          <AssociationSet Name="FeeSetting_FeeHead_FK" Association="CollegeDBModel.Store.FeeSetting_FeeHead_FK">
+            <End Role="FeeHead" EntitySet="FeeHead" />
+            <End Role="FeeSetting" EntitySet="FeeSetting" />
+          </AssociationSet>
+          <AssociationSet Name="FeeSetting_FeeHead_FKv1" Association="CollegeDBModel.Store.FeeSetting_FeeHead_FKv1">
+            <End Role="FeeHead" EntitySet="FeeHead" />
+            <End Role="FeeSetting" EntitySet="FeeSetting" />
+          </AssociationSet>
+          <AssociationSet Name="FeeSetting_Session_FK" Association="CollegeDBModel.Store.FeeSetting_Session_FK">
+            <End Role="Session" EntitySet="Session" />
+            <End Role="FeeSetting" EntitySet="FeeSetting" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_UserProfile" Association="CollegeDBModel.Store.FK_Users_UserProfile">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="Registration_Cast_FK" Association="CollegeDBModel.Store.Registration_Cast_FK">
+            <End Role="CAST" EntitySet="CAST" />
+            <End Role="Registration" EntitySet="Registration" />
+          </AssociationSet>
+          <AssociationSet Name="Registration_Class_FK" Association="CollegeDBModel.Store.Registration_Class_FK">
+            <End Role="Class" EntitySet="Class" />
+            <End Role="Registration" EntitySet="Registration" />
+          </AssociationSet>
+          <AssociationSet Name="Registration_ExtraCertificates_FK" Association="CollegeDBModel.Store.Registration_ExtraCertificates_FK">
+            <End Role="ExtraCertificates" EntitySet="ExtraCertificates" />
+            <End Role="Registration" EntitySet="Registration" />
+          </AssociationSet>
+          <AssociationSet Name="Registration_ExtraCertificates_FKv1" Association="CollegeDBModel.Store.Registration_ExtraCertificates_FKv1">
+            <End Role="ExtraCertificates" EntitySet="ExtraCertificates" />
+            <End Role="Registration" EntitySet="Registration" />
+          </AssociationSet>
+          <AssociationSet Name="Registration_ExtraCertificates_FKv2" Association="CollegeDBModel.Store.Registration_ExtraCertificates_FKv2">
+            <End Role="ExtraCertificates" EntitySet="ExtraCertificates" />
+            <End Role="Registration" EntitySet="Registration" />
+          </AssociationSet>
+          <AssociationSet Name="Registration_ExtraCertificates_FKv4" Association="CollegeDBModel.Store.Registration_ExtraCertificates_FKv4">
+            <End Role="ExtraCertificates" EntitySet="ExtraCertificates" />
+            <End Role="Registration" EntitySet="Registration" />
+          </AssociationSet>
+          <AssociationSet Name="Registration_ExtraCertificates_FKv5" Association="CollegeDBModel.Store.Registration_ExtraCertificates_FKv5">
+            <End Role="ExtraCertificates" EntitySet="ExtraCertificates" />
+            <End Role="Registration" EntitySet="Registration" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CAST">
+          <Key>
+            <PropertyRef Name="CastId" />
+            <PropertyRef Name="Sessionname" />
+          </Key>
+          <Property Name="CastId" Type="int" Nullable="false" />
+          <Property Name="CastName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Sessionname" Type="varchar" Nullable="false" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Class">
+          <Key>
+            <PropertyRef Name="ClassId" />
+            <PropertyRef Name="sessionName" />
+          </Key>
+          <Property Name="ClassId" Type="int" Nullable="false" />
+          <Property Name="ClassName" Type="varchar" MaxLength="500" />
+          <Property Name="sessionName" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="MaxPractical" Type="int" />
+          <Property Name="MiniPractical" Type="int" />
+          <Property Name="UpdateBy" Type="varchar" MaxLength="500" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="CoursesID" Type="int" Nullable="false" />
+          <Property Name="CoursesType_Sessionname" Type="varchar" Nullable="false" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="ClassFeeDetails">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="ClassId" />
+            <PropertyRef Name="FeeHeadID" />
+            <PropertyRef Name="SeesionName" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ClassId" Type="int" Nullable="false" />
+          <Property Name="FeeHeadID" Type="int" Nullable="false" />
+          <Property Name="SeesionName" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="Amount" Type="decimal" Scale="2" />
+          <Property Name="UpdateBy" Type="varchar" MaxLength="500" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CoursesType">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Sessionname" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="CoursesName" Type="varchar" MaxLength="500" />
+          <Property Name="10PerCount" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="12PerCount" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="GraducationPerCount" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="ExtraMaxPer" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Sessionname" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="UpdateBy" Type="varchar" MaxLength="500" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ExtraCertificates">
+          <Key>
+            <PropertyRef Name="CertificateId" />
+            <PropertyRef Name="SessionName" />
+          </Key>
+          <Property Name="CertificateId" Type="int" Nullable="false" />
+          <Property Name="CertificateName" Type="varchar" MaxLength="50" />
+          <Property Name="CertificatePersent" Type="decimal" Precision="28" />
+          <Property Name="SessionName" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="UpdateBy" Type="varchar" MaxLength="500" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="FeeGroup">
+          <Key>
+            <PropertyRef Name="FGroupId" />
+            <PropertyRef Name="SessionName" />
+          </Key>
+          <Property Name="FGroupId" Type="int" Nullable="false" />
+          <Property Name="GroupName" Type="varchar" MaxLength="500" />
+          <Property Name="SessionName" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="UpdateBy" Type="varchar" MaxLength="500" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="FeeHead">
+          <Key>
+            <PropertyRef Name="FeeId" />
+            <PropertyRef Name="SessionName" />
+          </Key>
+          <Property Name="FeeId" Type="int" Nullable="false" />
+          <Property Name="FeeGroupId" Type="int" Nullable="false" />
+          <Property Name="SessionName" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="FeeeName" Type="varchar" MaxLength="500" />
+          <Property Name="FeeSection" Type="char" MaxLength="1" />
+          <Property Name="FeeType" Type="char" MaxLength="10" />
+          <Property Name="UpdateBy" Type="varchar" MaxLength="500" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="FeeSetting">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="ClassId" />
+            <PropertyRef Name="FromFeeHeadId" />
+            <PropertyRef Name="ToFeeHeadId" />
+            <PropertyRef Name="SessionName" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="ClassId" Type="int" Nullable="false" />
+          <Property Name="FromFeeHeadId" Type="int" Nullable="false" />
+          <Property Name="ToFeeHeadId" Type="int" Nullable="false" />
+          <Property Name="Operation" Type="varchar" MaxLength="500" />
+          <Property Name="Amount" Type="int" />
+          <Property Name="MaxLimit" Type="varchar" MaxLength="500" />
+          <Property Name="SessionName" Type="varchar" Nullable="false" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Registration">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="RegistrationNo" />
+            <PropertyRef Name="RecNo" />
+            <PropertyRef Name="ClassId" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="RegistrationNo" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="FormNo" Type="varchar" MaxLength="500" />
+          <Property Name="RecNo" Type="int" Nullable="false" />
+          <Property Name="RegDate" Type="datetime" />
+          <Property Name="ClassId" Type="int" Nullable="false" />
+          <Property Name="CastId" Type="int" Nullable="false" />
+          <Property Name="STitle" Type="varchar" MaxLength="500" />
+          <Property Name="StudentFName" Type="varchar" MaxLength="500" />
+          <Property Name="StudentLName" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="FTitle" Type="varchar" MaxLength="500" />
+          <Property Name="RegFee" Type="decimal" Scale="2" />
+          <Property Name="10MaxMarks" Type="decimal" Scale="2" />
+          <Property Name="12MaxMarks" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="GraducateMaxMarks" Type="decimal" Scale="2" />
+          <Property Name="10ObtenMarks" Type="decimal" Scale="2" />
+          <Property Name="12ObtenMarks" Type="decimal" Scale="2" />
+          <Property Name="GraducateObtenMarks" Type="decimal" Scale="2" />
+          <Property Name="10Per" Type="decimal" Scale="2" />
+          <Property Name="12Per" Type="decimal" Scale="2" />
+          <Property Name="GraducatePer" Type="decimal" Scale="2" />
+          <Property Name="ExtraId1" Type="int" Nullable="false" />
+          <Property Name="ExtraPer1" Type="decimal" Scale="2" />
+          <Property Name="ExtraId2" Type="int" Nullable="false" />
+          <Property Name="ExtraPer2" Type="decimal" Scale="2" />
+          <Property Name="ExtraId3" Type="int" Nullable="false" />
+          <Property Name="ExtraPer3" Type="decimal" Scale="2" />
+          <Property Name="ExtraId4" Type="int" Nullable="false" />
+          <Property Name="ExtraPer4" Type="decimal" Scale="2" />
+          <Property Name="ExtraId5" Type="int" Nullable="false" />
+          <Property Name="ExtraPer5" Type="decimal" Scale="2" />
+          <Property Name="TotalExtraPer" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="TotalEducationPer" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="Remark" Type="varchar" MaxLength="1000" />
+          <Property Name="SessionName" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="UpdateBy" Type="varchar" MaxLength="500" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Session">
+          <Key>
+            <PropertyRef Name="SessionName" />
+          </Key>
+          <Property Name="SessionId" Type="int" Nullable="false" />
+          <Property Name="SessionName" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="Startdate" Type="datetime" />
+          <Property Name="EndingDate" Type="datetime" />
+          <Property Name="DefaultIndic" Type="bit" />
+          <Property Name="OpenIndic" Type="bit" />
+          <Property Name="UpdateBy" Type="varchar" MaxLength="500" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="Email" Type="varchar" Nullable="false" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar" MaxLength="50" />
+          <Property Name="Mob" Type="int" />
+          <Property Name="ProfileId" Type="int" />
+        </EntityType>
+        <Association Name="Cast_Session_FK">
+          <End Role="Session" Type="CollegeDBModel.Store.Session" Multiplicity="1" />
+          <End Role="CAST" Type="CollegeDBModel.Store.CAST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Session">
+              <PropertyRef Name="SessionName" />
+            </Principal>
+            <Dependent Role="CAST">
+              <PropertyRef Name="Sessionname" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Class_CoursesType_FK">
+          <End Role="CoursesType" Type="CollegeDBModel.Store.CoursesType" Multiplicity="1" />
+          <End Role="Class" Type="CollegeDBModel.Store.Class" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoursesType">
+              <PropertyRef Name="ID" />
+              <PropertyRef Name="Sessionname" />
+            </Principal>
+            <Dependent Role="Class">
+              <PropertyRef Name="CoursesID" />
+              <PropertyRef Name="CoursesType_Sessionname" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ClassFeeDetails_Class_FK">
+          <End Role="Class" Type="CollegeDBModel.Store.Class" Multiplicity="1" />
+          <End Role="ClassFeeDetails" Type="CollegeDBModel.Store.ClassFeeDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Class">
+              <PropertyRef Name="ClassId" />
+              <PropertyRef Name="sessionName" />
+            </Principal>
+            <Dependent Role="ClassFeeDetails">
+              <PropertyRef Name="ClassId" />
+              <PropertyRef Name="SeesionName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ClassFeeDetails_FeeHead_FK">
+          <End Role="FeeHead" Type="CollegeDBModel.Store.FeeHead" Multiplicity="1" />
+          <End Role="ClassFeeDetails" Type="CollegeDBModel.Store.ClassFeeDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FeeHead">
+              <PropertyRef Name="FeeId" />
+              <PropertyRef Name="SessionName" />
+            </Principal>
+            <Dependent Role="ClassFeeDetails">
+              <PropertyRef Name="FeeHeadID" />
+              <PropertyRef Name="SeesionName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ClassFeeDetails_Session_FK">
+          <End Role="Session" Type="CollegeDBModel.Store.Session" Multiplicity="1" />
+          <End Role="ClassFeeDetails" Type="CollegeDBModel.Store.ClassFeeDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Session">
+              <PropertyRef Name="SessionName" />
+            </Principal>
+            <Dependent Role="ClassFeeDetails">
+              <PropertyRef Name="SeesionName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CoursesType_Session_FK">
+          <End Role="Session" Type="CollegeDBModel.Store.Session" Multiplicity="1" />
+          <End Role="CoursesType" Type="CollegeDBModel.Store.CoursesType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Session">
+              <PropertyRef Name="SessionName" />
+            </Principal>
+            <Dependent Role="CoursesType">
+              <PropertyRef Name="Sessionname" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FeeHead_FeeGroup_FK">
+          <End Role="FeeGroup" Type="CollegeDBModel.Store.FeeGroup" Multiplicity="1" />
+          <End Role="FeeHead" Type="CollegeDBModel.Store.FeeHead" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FeeGroup">
+              <PropertyRef Name="FGroupId" />
+              <PropertyRef Name="SessionName" />
+            </Principal>
+            <Dependent Role="FeeHead">
+              <PropertyRef Name="FeeGroupId" />
+              <PropertyRef Name="SessionName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FeeSetting_Class_FK">
+          <End Role="Class" Type="CollegeDBModel.Store.Class" Multiplicity="1" />
+          <End Role="FeeSetting" Type="CollegeDBModel.Store.FeeSetting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Class">
+              <PropertyRef Name="ClassId" />
+              <PropertyRef Name="sessionName" />
+            </Principal>
+            <Dependent Role="FeeSetting">
+              <PropertyRef Name="ClassId" />
+              <PropertyRef Name="SessionName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FeeSetting_FeeHead_FK">
+          <End Role="FeeHead" Type="CollegeDBModel.Store.FeeHead" Multiplicity="1" />
+          <End Role="FeeSetting" Type="CollegeDBModel.Store.FeeSetting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FeeHead">
+              <PropertyRef Name="FeeId" />
+              <PropertyRef Name="SessionName" />
+            </Principal>
+            <Dependent Role="FeeSetting">
+              <PropertyRef Name="FromFeeHeadId" />
+              <PropertyRef Name="SessionName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FeeSetting_FeeHead_FKv1">
+          <End Role="FeeHead" Type="CollegeDBModel.Store.FeeHead" Multiplicity="1" />
+          <End Role="FeeSetting" Type="CollegeDBModel.Store.FeeSetting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FeeHead">
+              <PropertyRef Name="FeeId" />
+              <PropertyRef Name="SessionName" />
+            </Principal>
+            <Dependent Role="FeeSetting">
+              <PropertyRef Name="ToFeeHeadId" />
+              <PropertyRef Name="SessionName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FeeSetting_Session_FK">
+          <End Role="Session" Type="CollegeDBModel.Store.Session" Multiplicity="1" />
+          <End Role="FeeSetting" Type="CollegeDBModel.Store.FeeSetting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Session">
+              <PropertyRef Name="SessionName" />
+            </Principal>
+            <Dependent Role="FeeSetting">
+              <PropertyRef Name="SessionName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_UserProfile">
+          <End Role="UserProfile" Type="CollegeDBModel.Store.UserProfile" Multiplicity="0..1" />
+          <End Role="Users" Type="CollegeDBModel.Store.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="ProfileId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Registration_Cast_FK">
+          <End Role="CAST" Type="CollegeDBModel.Store.CAST" Multiplicity="1" />
+          <End Role="Registration" Type="CollegeDBModel.Store.Registration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CAST">
+              <PropertyRef Name="CastId" />
+              <PropertyRef Name="Sessionname" />
+            </Principal>
+            <Dependent Role="Registration">
+              <PropertyRef Name="CastId" />
+              <PropertyRef Name="SessionName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Registration_Class_FK">
+          <End Role="Class" Type="CollegeDBModel.Store.Class" Multiplicity="1" />
+          <End Role="Registration" Type="CollegeDBModel.Store.Registration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Class">
+              <PropertyRef Name="ClassId" />
+              <PropertyRef Name="sessionName" />
+            </Principal>
+            <Dependent Role="Registration">
+              <PropertyRef Name="ClassId" />
+              <PropertyRef Name="StudentLName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Registration_ExtraCertificates_FK">
+          <End Role="ExtraCertificates" Type="CollegeDBModel.Store.ExtraCertificates" Multiplicity="1" />
+          <End Role="Registration" Type="CollegeDBModel.Store.Registration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExtraCertificates">
+              <PropertyRef Name="CertificateId" />
+              <PropertyRef Name="SessionName" />
+            </Principal>
+            <Dependent Role="Registration">
+              <PropertyRef Name="ExtraId1" />
+              <PropertyRef Name="SessionName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Registration_ExtraCertificates_FKv1">
+          <End Role="ExtraCertificates" Type="CollegeDBModel.Store.ExtraCertificates" Multiplicity="1" />
+          <End Role="Registration" Type="CollegeDBModel.Store.Registration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExtraCertificates">
+              <PropertyRef Name="CertificateId" />
+              <PropertyRef Name="SessionName" />
+            </Principal>
+            <Dependent Role="Registration">
+              <PropertyRef Name="ExtraId4" />
+              <PropertyRef Name="SessionName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Registration_ExtraCertificates_FKv2">
+          <End Role="ExtraCertificates" Type="CollegeDBModel.Store.ExtraCertificates" Multiplicity="1" />
+          <End Role="Registration" Type="CollegeDBModel.Store.Registration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExtraCertificates">
+              <PropertyRef Name="CertificateId" />
+              <PropertyRef Name="SessionName" />
+            </Principal>
+            <Dependent Role="Registration">
+              <PropertyRef Name="ExtraId2" />
+              <PropertyRef Name="SessionName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Registration_ExtraCertificates_FKv4">
+          <End Role="ExtraCertificates" Type="CollegeDBModel.Store.ExtraCertificates" Multiplicity="1" />
+          <End Role="Registration" Type="CollegeDBModel.Store.Registration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExtraCertificates">
+              <PropertyRef Name="CertificateId" />
+              <PropertyRef Name="SessionName" />
+            </Principal>
+            <Dependent Role="Registration">
+              <PropertyRef Name="ExtraId3" />
+              <PropertyRef Name="SessionName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Registration_ExtraCertificates_FKv5">
+          <End Role="ExtraCertificates" Type="CollegeDBModel.Store.ExtraCertificates" Multiplicity="1" />
+          <End Role="Registration" Type="CollegeDBModel.Store.Registration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExtraCertificates">
+              <PropertyRef Name="CertificateId" />
+              <PropertyRef Name="SessionName" />
+            </Principal>
+            <Dependent Role="Registration">
+              <PropertyRef Name="ExtraId5" />
+              <PropertyRef Name="SessionName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CollegeDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="CollegeDBEntities1" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="CASTs" EntityType="CollegeDBModel.CAST" />
+          <EntitySet Name="Classes" EntityType="CollegeDBModel.Class" />
+          <EntitySet Name="ClassFeeDetails" EntityType="CollegeDBModel.ClassFeeDetail" />
+          <EntitySet Name="CoursesTypes" EntityType="CollegeDBModel.CoursesType" />
+          <EntitySet Name="ExtraCertificates" EntityType="CollegeDBModel.ExtraCertificate" />
+          <EntitySet Name="FeeGroups" EntityType="CollegeDBModel.FeeGroup" />
+          <EntitySet Name="FeeHeads" EntityType="CollegeDBModel.FeeHead" />
+          <EntitySet Name="FeeSettings" EntityType="CollegeDBModel.FeeSetting" />
+          <EntitySet Name="Registrations" EntityType="CollegeDBModel.Registration" />
+          <EntitySet Name="Sessions" EntityType="CollegeDBModel.Session" />
+          <EntitySet Name="UserProfiles" EntityType="CollegeDBModel.UserProfile" />
+          <EntitySet Name="Users" EntityType="CollegeDBModel.User" />
+          <AssociationSet Name="Cast_Session_FK" Association="CollegeDBModel.Cast_Session_FK">
+            <End Role="Session" EntitySet="Sessions" />
+            <End Role="CAST" EntitySet="CASTs" />
+          </AssociationSet>
+          <AssociationSet Name="Registration_Cast_FK" Association="CollegeDBModel.Registration_Cast_FK">
+            <End Role="CAST" EntitySet="CASTs" />
+            <End Role="Registration" EntitySet="Registrations" />
+          </AssociationSet>
+          <AssociationSet Name="Class_CoursesType_FK" Association="CollegeDBModel.Class_CoursesType_FK">
+            <End Role="CoursesType" EntitySet="CoursesTypes" />
+            <End Role="Class" EntitySet="Classes" />
+          </AssociationSet>
+          <AssociationSet Name="ClassFeeDetails_Class_FK" Association="CollegeDBModel.ClassFeeDetails_Class_FK">
+            <End Role="Class" EntitySet="Classes" />
+            <End Role="ClassFeeDetails" EntitySet="ClassFeeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FeeSetting_Class_FK" Association="CollegeDBModel.FeeSetting_Class_FK">
+            <End Role="Class" EntitySet="Classes" />
+            <End Role="FeeSetting" EntitySet="FeeSettings" />
+          </AssociationSet>
+          <AssociationSet Name="Registration_Class_FK" Association="CollegeDBModel.Registration_Class_FK">
+            <End Role="Class" EntitySet="Classes" />
+            <End Role="Registration" EntitySet="Registrations" />
+          </AssociationSet>
+          <AssociationSet Name="ClassFeeDetails_FeeHead_FK" Association="CollegeDBModel.ClassFeeDetails_FeeHead_FK">
+            <End Role="FeeHead" EntitySet="FeeHeads" />
+            <End Role="ClassFeeDetails" EntitySet="ClassFeeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="ClassFeeDetails_Session_FK" Association="CollegeDBModel.ClassFeeDetails_Session_FK">
+            <End Role="Session" EntitySet="Sessions" />
+            <End Role="ClassFeeDetails" EntitySet="ClassFeeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="CoursesType_Session_FK" Association="CollegeDBModel.CoursesType_Session_FK">
+            <End Role="Session" EntitySet="Sessions" />
+            <End Role="CoursesType" EntitySet="CoursesTypes" />
+          </AssociationSet>
+          <AssociationSet Name="Registration_ExtraCertificates_FK" Association="CollegeDBModel.Registration_ExtraCertificates_FK">
+            <End Role="ExtraCertificates" EntitySet="ExtraCertificates" />
+            <End Role="Registration" EntitySet="Registrations" />
+          </AssociationSet>
+          <AssociationSet Name="Registration_ExtraCertificates_FKv1" Association="CollegeDBModel.Registration_ExtraCertificates_FKv1">
+            <End Role="ExtraCertificates" EntitySet="ExtraCertificates" />
+            <End Role="Registration" EntitySet="Registrations" />
+          </AssociationSet>
+          <AssociationSet Name="Registration_ExtraCertificates_FKv2" Association="CollegeDBModel.Registration_ExtraCertificates_FKv2">
+            <End Role="ExtraCertificates" EntitySet="ExtraCertificates" />
+            <End Role="Registration" EntitySet="Registrations" />
+          </AssociationSet>
+          <AssociationSet Name="Registration_ExtraCertificates_FKv4" Association="CollegeDBModel.Registration_ExtraCertificates_FKv4">
+            <End Role="ExtraCertificates" EntitySet="ExtraCertificates" />
+            <End Role="Registration" EntitySet="Registrations" />
+          </AssociationSet>
+          <AssociationSet Name="Registration_ExtraCertificates_FKv5" Association="CollegeDBModel.Registration_ExtraCertificates_FKv5">
+            <End Role="ExtraCertificates" EntitySet="ExtraCertificates" />
+            <End Role="Registration" EntitySet="Registrations" />
+          </AssociationSet>
+          <AssociationSet Name="FeeHead_FeeGroup_FK" Association="CollegeDBModel.FeeHead_FeeGroup_FK">
+            <End Role="FeeGroup" EntitySet="FeeGroups" />
+            <End Role="FeeHead" EntitySet="FeeHeads" />
+          </AssociationSet>
+          <AssociationSet Name="FeeSetting_FeeHead_FK" Association="CollegeDBModel.FeeSetting_FeeHead_FK">
+            <End Role="FeeHead" EntitySet="FeeHeads" />
+            <End Role="FeeSetting" EntitySet="FeeSettings" />
+          </AssociationSet>
+          <AssociationSet Name="FeeSetting_FeeHead_FKv1" Association="CollegeDBModel.FeeSetting_FeeHead_FKv1">
+            <End Role="FeeHead" EntitySet="FeeHeads" />
+            <End Role="FeeSetting" EntitySet="FeeSettings" />
+          </AssociationSet>
+          <AssociationSet Name="FeeSetting_Session_FK" Association="CollegeDBModel.FeeSetting_Session_FK">
+            <End Role="Session" EntitySet="Sessions" />
+            <End Role="FeeSetting" EntitySet="FeeSettings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_UserProfile" Association="CollegeDBModel.FK_Users_UserProfile">
+            <End Role="UserProfile" EntitySet="UserProfiles" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CAST">
+          <Key>
+            <PropertyRef Name="CastId" />
+            <PropertyRef Name="Sessionname" />
+          </Key>
+          <Property Name="CastId" Type="Int32" Nullable="false" />
+          <Property Name="CastName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Sessionname" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Session" Relationship="CollegeDBModel.Cast_Session_FK" FromRole="CAST" ToRole="Session" />
+          <NavigationProperty Name="Registrations" Relationship="CollegeDBModel.Registration_Cast_FK" FromRole="CAST" ToRole="Registration" />
+        </EntityType>
+        <EntityType Name="Class">
+          <Key>
+            <PropertyRef Name="ClassId" />
+            <PropertyRef Name="sessionName" />
+          </Key>
+          <Property Name="ClassId" Type="Int32" Nullable="false" />
+          <Property Name="ClassName" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="sessionName" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="MaxPractical" Type="Int32" />
+          <Property Name="MiniPractical" Type="Int32" />
+          <Property Name="UpdateBy" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="CoursesID" Type="Int32" Nullable="false" />
+          <Property Name="CoursesType_Sessionname" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="CoursesType" Relationship="CollegeDBModel.Class_CoursesType_FK" FromRole="Class" ToRole="CoursesType" />
+          <NavigationProperty Name="ClassFeeDetails" Relationship="CollegeDBModel.ClassFeeDetails_Class_FK" FromRole="Class" ToRole="ClassFeeDetails" />
+          <NavigationProperty Name="FeeSettings" Relationship="CollegeDBModel.FeeSetting_Class_FK" FromRole="Class" ToRole="FeeSetting" />
+          <NavigationProperty Name="Registrations" Relationship="CollegeDBModel.Registration_Class_FK" FromRole="Class" ToRole="Registration" />
+        </EntityType>
+        <EntityType Name="ClassFeeDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="ClassId" />
+            <PropertyRef Name="FeeHeadID" />
+            <PropertyRef Name="SeesionName" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ClassId" Type="Int32" Nullable="false" />
+          <Property Name="FeeHeadID" Type="Int32" Nullable="false" />
+          <Property Name="SeesionName" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="UpdateBy" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Class" Relationship="CollegeDBModel.ClassFeeDetails_Class_FK" FromRole="ClassFeeDetails" ToRole="Class" />
+          <NavigationProperty Name="FeeHead" Relationship="CollegeDBModel.ClassFeeDetails_FeeHead_FK" FromRole="ClassFeeDetails" ToRole="FeeHead" />
+          <NavigationProperty Name="Session" Relationship="CollegeDBModel.ClassFeeDetails_Session_FK" FromRole="ClassFeeDetails" ToRole="Session" />
+        </EntityType>
+        <EntityType Name="CoursesType">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Sessionname" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="CoursesName" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="C10PerCount" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="C12PerCount" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="GraducationPerCount" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="ExtraMaxPer" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Sessionname" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="UpdateBy" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Classes" Relationship="CollegeDBModel.Class_CoursesType_FK" FromRole="CoursesType" ToRole="Class" />
+          <NavigationProperty Name="Session" Relationship="CollegeDBModel.CoursesType_Session_FK" FromRole="CoursesType" ToRole="Session" />
+        </EntityType>
+        <EntityType Name="ExtraCertificate">
+          <Key>
+            <PropertyRef Name="CertificateId" />
+            <PropertyRef Name="SessionName" />
+          </Key>
+          <Property Name="CertificateId" Type="Int32" Nullable="false" />
+          <Property Name="CertificateName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CertificatePersent" Type="Decimal" Precision="28" Scale="0" />
+          <Property Name="SessionName" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="UpdateBy" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Registrations" Relationship="CollegeDBModel.Registration_ExtraCertificates_FK" FromRole="ExtraCertificates" ToRole="Registration" />
+          <NavigationProperty Name="Registrations1" Relationship="CollegeDBModel.Registration_ExtraCertificates_FKv1" FromRole="ExtraCertificates" ToRole="Registration" />
+          <NavigationProperty Name="Registrations2" Relationship="CollegeDBModel.Registration_ExtraCertificates_FKv2" FromRole="ExtraCertificates" ToRole="Registration" />
+          <NavigationProperty Name="Registrations3" Relationship="CollegeDBModel.Registration_ExtraCertificates_FKv4" FromRole="ExtraCertificates" ToRole="Registration" />
+          <NavigationProperty Name="Registrations4" Relationship="CollegeDBModel.Registration_ExtraCertificates_FKv5" FromRole="ExtraCertificates" ToRole="Registration" />
+        </EntityType>
+        <EntityType Name="FeeGroup">
+          <Key>
+            <PropertyRef Name="FGroupId" />
+            <PropertyRef Name="SessionName" />
+          </Key>
+          <Property Name="FGroupId" Type="Int32" Nullable="false" />
+          <Property Name="GroupName" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="SessionName" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="UpdateBy" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="FeeHeads" Relationship="CollegeDBModel.FeeHead_FeeGroup_FK" FromRole="FeeGroup" ToRole="FeeHead" />
+        </EntityType>
+        <EntityType Name="FeeHead">
+          <Key>
+            <PropertyRef Name="FeeId" />
+            <PropertyRef Name="SessionName" />
+          </Key>
+          <Property Name="FeeId" Type="Int32" Nullable="false" />
+          <Property Name="FeeGroupId" Type="Int32" Nullable="false" />
+          <Property Name="SessionName" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="FeeeName" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="FeeSection" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="FeeType" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="UpdateBy" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ClassFeeDetails" Relationship="CollegeDBModel.ClassFeeDetails_FeeHead_FK" FromRole="FeeHead" ToRole="ClassFeeDetails" />
+          <NavigationProperty Name="FeeGroup" Relationship="CollegeDBModel.FeeHead_FeeGroup_FK" FromRole="FeeHead" ToRole="FeeGroup" />
+          <NavigationProperty Name="FeeSettings" Relationship="CollegeDBModel.FeeSetting_FeeHead_FK" FromRole="FeeHead" ToRole="FeeSetting" />
+          <NavigationProperty Name="FeeSettings1" Relationship="CollegeDBModel.FeeSetting_FeeHead_FKv1" FromRole="FeeHead" ToRole="FeeSetting" />
+        </EntityType>
+        <EntityType Name="FeeSetting">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="ClassId" />
+            <PropertyRef Name="FromFeeHeadId" />
+            <PropertyRef Name="ToFeeHeadId" />
+            <PropertyRef Name="SessionName" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="ClassId" Type="Int32" Nullable="false" />
+          <Property Name="FromFeeHeadId" Type="Int32" Nullable="false" />
+          <Property Name="ToFeeHeadId" Type="Int32" Nullable="false" />
+          <Property Name="Operation" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="Amount" Type="Int32" />
+          <Property Name="MaxLimit" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="SessionName" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Class" Relationship="CollegeDBModel.FeeSetting_Class_FK" FromRole="FeeSetting" ToRole="Class" />
+          <NavigationProperty Name="FeeHead" Relationship="CollegeDBModel.FeeSetting_FeeHead_FK" FromRole="FeeSetting" ToRole="FeeHead" />
+          <NavigationProperty Name="FeeHead1" Relationship="CollegeDBModel.FeeSetting_FeeHead_FKv1" FromRole="FeeSetting" ToRole="FeeHead" />
+          <NavigationProperty Name="Session" Relationship="CollegeDBModel.FeeSetting_Session_FK" FromRole="FeeSetting" ToRole="Session" />
+        </EntityType>
+        <EntityType Name="Registration">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="RegistrationNo" />
+            <PropertyRef Name="RecNo" />
+            <PropertyRef Name="ClassId" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="RegistrationNo" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="FormNo" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="RecNo" Type="Int32" Nullable="false" />
+          <Property Name="RegDate" Type="DateTime" Precision="3" />
+          <Property Name="ClassId" Type="Int32" Nullable="false" />
+          <Property Name="CastId" Type="Int32" Nullable="false" />
+          <Property Name="STitle" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="StudentFName" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="StudentLName" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="FTitle" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="RegFee" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="C10MaxMarks" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="C12MaxMarks" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="GraducateMaxMarks" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="C10ObtenMarks" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="C12ObtenMarks" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="GraducateObtenMarks" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="C10Per" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="C12Per" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="GraducatePer" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ExtraId1" Type="Int32" Nullable="false" />
+          <Property Name="ExtraPer1" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ExtraId2" Type="Int32" Nullable="false" />
+          <Property Name="ExtraPer2" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ExtraId3" Type="Int32" Nullable="false" />
+          <Property Name="ExtraPer3" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ExtraId4" Type="Int32" Nullable="false" />
+          <Property Name="ExtraPer4" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ExtraId5" Type="Int32" Nullable="false" />
+          <Property Name="ExtraPer5" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalExtraPer" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="TotalEducationPer" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="Remark" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="SessionName" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="UpdateBy" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="CAST" Relationship="CollegeDBModel.Registration_Cast_FK" FromRole="Registration" ToRole="CAST" />
+          <NavigationProperty Name="Class" Relationship="CollegeDBModel.Registration_Class_FK" FromRole="Registration" ToRole="Class" />
+          <NavigationProperty Name="ExtraCertificate" Relationship="CollegeDBModel.Registration_ExtraCertificates_FK" FromRole="Registration" ToRole="ExtraCertificates" />
+          <NavigationProperty Name="ExtraCertificate1" Relationship="CollegeDBModel.Registration_ExtraCertificates_FKv1" FromRole="Registration" ToRole="ExtraCertificates" />
+          <NavigationProperty Name="ExtraCertificate2" Relationship="CollegeDBModel.Registration_ExtraCertificates_FKv2" FromRole="Registration" ToRole="ExtraCertificates" />
+          <NavigationProperty Name="ExtraCertificate3" Relationship="CollegeDBModel.Registration_ExtraCertificates_FKv4" FromRole="Registration" ToRole="ExtraCertificates" />
+          <NavigationProperty Name="ExtraCertificate4" Relationship="CollegeDBModel.Registration_ExtraCertificates_FKv5" FromRole="Registration" ToRole="ExtraCertificates" />
+        </EntityType>
+        <EntityType Name="Session">
+          <Key>
+            <PropertyRef Name="SessionName" />
+          </Key>
+          <Property Name="SessionId" Type="Int32" Nullable="false" />
+          <Property Name="SessionName" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="Startdate" Type="DateTime" Precision="3" />
+          <Property Name="EndingDate" Type="DateTime" Precision="3" />
+          <Property Name="DefaultIndic" Type="Boolean" />
+          <Property Name="OpenIndic" Type="Boolean" />
+          <Property Name="UpdateBy" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="CASTs" Relationship="CollegeDBModel.Cast_Session_FK" FromRole="Session" ToRole="CAST" />
+          <NavigationProperty Name="ClassFeeDetails" Relationship="CollegeDBModel.ClassFeeDetails_Session_FK" FromRole="Session" ToRole="ClassFeeDetails" />
+          <NavigationProperty Name="CoursesTypes" Relationship="CollegeDBModel.CoursesType_Session_FK" FromRole="Session" ToRole="CoursesType" />
+          <NavigationProperty Name="FeeSettings" Relationship="CollegeDBModel.FeeSetting_Session_FK" FromRole="Session" ToRole="FeeSetting" />
+        </EntityType>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Users" Relationship="CollegeDBModel.FK_Users_UserProfile" FromRole="UserProfile" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Password" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Mob" Type="Int32" />
+          <Property Name="ProfileId" Type="Int32" />
+          <NavigationProperty Name="UserProfile" Relationship="CollegeDBModel.FK_Users_UserProfile" FromRole="Users" ToRole="UserProfile" />
+        </EntityType>
+        <Association Name="Cast_Session_FK">
+          <End Role="Session" Type="CollegeDBModel.Session" Multiplicity="1" />
+          <End Role="CAST" Type="CollegeDBModel.CAST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Session">
+              <PropertyRef Name="SessionName" />
+            </Principal>
+            <Dependent Role="CAST">
+              <PropertyRef Name="Sessionname" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Registration_Cast_FK">
+          <End Role="CAST" Type="CollegeDBModel.CAST" Multiplicity="1" />
+          <End Role="Registration" Type="CollegeDBModel.Registration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CAST">
+              <PropertyRef Name="CastId" />
+              <PropertyRef Name="Sessionname" />
+            </Principal>
+            <Dependent Role="Registration">
+              <PropertyRef Name="CastId" />
+              <PropertyRef Name="SessionName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Class_CoursesType_FK">
+          <End Role="CoursesType" Type="CollegeDBModel.CoursesType" Multiplicity="1" />
+          <End Role="Class" Type="CollegeDBModel.Class" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoursesType">
+              <PropertyRef Name="ID" />
+              <PropertyRef Name="Sessionname" />
+            </Principal>
+            <Dependent Role="Class">
+              <PropertyRef Name="CoursesID" />
+              <PropertyRef Name="CoursesType_Sessionname" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ClassFeeDetails_Class_FK">
+          <End Role="Class" Type="CollegeDBModel.Class" Multiplicity="1" />
+          <End Role="ClassFeeDetails" Type="CollegeDBModel.ClassFeeDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Class">
+              <PropertyRef Name="ClassId" />
+              <PropertyRef Name="sessionName" />
+            </Principal>
+            <Dependent Role="ClassFeeDetails">
+              <PropertyRef Name="ClassId" />
+              <PropertyRef Name="SeesionName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FeeSetting_Class_FK">
+          <End Role="Class" Type="CollegeDBModel.Class" Multiplicity="1" />
+          <End Role="FeeSetting" Type="CollegeDBModel.FeeSetting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Class">
+              <PropertyRef Name="ClassId" />
+              <PropertyRef Name="sessionName" />
+            </Principal>
+            <Dependent Role="FeeSetting">
+              <PropertyRef Name="ClassId" />
+              <PropertyRef Name="SessionName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Registration_Class_FK">
+          <End Role="Class" Type="CollegeDBModel.Class" Multiplicity="1" />
+          <End Role="Registration" Type="CollegeDBModel.Registration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Class">
+              <PropertyRef Name="ClassId" />
+              <PropertyRef Name="sessionName" />
+            </Principal>
+            <Dependent Role="Registration">
+              <PropertyRef Name="ClassId" />
+              <PropertyRef Name="StudentLName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ClassFeeDetails_FeeHead_FK">
+          <End Role="FeeHead" Type="CollegeDBModel.FeeHead" Multiplicity="1" />
+          <End Role="ClassFeeDetails" Type="CollegeDBModel.ClassFeeDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FeeHead">
+              <PropertyRef Name="FeeId" />
+              <PropertyRef Name="SessionName" />
+            </Principal>
+            <Dependent Role="ClassFeeDetails">
+              <PropertyRef Name="FeeHeadID" />
+              <PropertyRef Name="SeesionName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ClassFeeDetails_Session_FK">
+          <End Role="Session" Type="CollegeDBModel.Session" Multiplicity="1" />
+          <End Role="ClassFeeDetails" Type="CollegeDBModel.ClassFeeDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Session">
+              <PropertyRef Name="SessionName" />
+            </Principal>
+            <Dependent Role="ClassFeeDetails">
+              <PropertyRef Name="SeesionName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CoursesType_Session_FK">
+          <End Role="Session" Type="CollegeDBModel.Session" Multiplicity="1" />
+          <End Role="CoursesType" Type="CollegeDBModel.CoursesType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Session">
+              <PropertyRef Name="SessionName" />
+            </Principal>
+            <Dependent Role="CoursesType">
+              <PropertyRef Name="Sessionname" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Registration_ExtraCertificates_FK">
+          <End Role="ExtraCertificates" Type="CollegeDBModel.ExtraCertificate" Multiplicity="1" />
+          <End Role="Registration" Type="CollegeDBModel.Registration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExtraCertificates">
+              <PropertyRef Name="CertificateId" />
+              <PropertyRef Name="SessionName" />
+            </Principal>
+            <Dependent Role="Registration">
+              <PropertyRef Name="ExtraId1" />
+              <PropertyRef Name="SessionName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Registration_ExtraCertificates_FKv1">
+          <End Role="ExtraCertificates" Type="CollegeDBModel.ExtraCertificate" Multiplicity="1" />
+          <End Role="Registration" Type="CollegeDBModel.Registration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExtraCertificates">
+              <PropertyRef Name="CertificateId" />
+              <PropertyRef Name="SessionName" />
+            </Principal>
+            <Dependent Role="Registration">
+              <PropertyRef Name="ExtraId4" />
+              <PropertyRef Name="SessionName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Registration_ExtraCertificates_FKv2">
+          <End Role="ExtraCertificates" Type="CollegeDBModel.ExtraCertificate" Multiplicity="1" />
+          <End Role="Registration" Type="CollegeDBModel.Registration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExtraCertificates">
+              <PropertyRef Name="CertificateId" />
+              <PropertyRef Name="SessionName" />
+            </Principal>
+            <Dependent Role="Registration">
+              <PropertyRef Name="ExtraId2" />
+              <PropertyRef Name="SessionName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Registration_ExtraCertificates_FKv4">
+          <End Role="ExtraCertificates" Type="CollegeDBModel.ExtraCertificate" Multiplicity="1" />
+          <End Role="Registration" Type="CollegeDBModel.Registration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExtraCertificates">
+              <PropertyRef Name="CertificateId" />
+              <PropertyRef Name="SessionName" />
+            </Principal>
+            <Dependent Role="Registration">
+              <PropertyRef Name="ExtraId3" />
+              <PropertyRef Name="SessionName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Registration_ExtraCertificates_FKv5">
+          <End Role="ExtraCertificates" Type="CollegeDBModel.ExtraCertificate" Multiplicity="1" />
+          <End Role="Registration" Type="CollegeDBModel.Registration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExtraCertificates">
+              <PropertyRef Name="CertificateId" />
+              <PropertyRef Name="SessionName" />
+            </Principal>
+            <Dependent Role="Registration">
+              <PropertyRef Name="ExtraId5" />
+              <PropertyRef Name="SessionName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FeeHead_FeeGroup_FK">
+          <End Role="FeeGroup" Type="CollegeDBModel.FeeGroup" Multiplicity="1" />
+          <End Role="FeeHead" Type="CollegeDBModel.FeeHead" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FeeGroup">
+              <PropertyRef Name="FGroupId" />
+              <PropertyRef Name="SessionName" />
+            </Principal>
+            <Dependent Role="FeeHead">
+              <PropertyRef Name="FeeGroupId" />
+              <PropertyRef Name="SessionName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FeeSetting_FeeHead_FK">
+          <End Role="FeeHead" Type="CollegeDBModel.FeeHead" Multiplicity="1" />
+          <End Role="FeeSetting" Type="CollegeDBModel.FeeSetting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FeeHead">
+              <PropertyRef Name="FeeId" />
+              <PropertyRef Name="SessionName" />
+            </Principal>
+            <Dependent Role="FeeSetting">
+              <PropertyRef Name="FromFeeHeadId" />
+              <PropertyRef Name="SessionName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FeeSetting_FeeHead_FKv1">
+          <End Role="FeeHead" Type="CollegeDBModel.FeeHead" Multiplicity="1" />
+          <End Role="FeeSetting" Type="CollegeDBModel.FeeSetting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FeeHead">
+              <PropertyRef Name="FeeId" />
+              <PropertyRef Name="SessionName" />
+            </Principal>
+            <Dependent Role="FeeSetting">
+              <PropertyRef Name="ToFeeHeadId" />
+              <PropertyRef Name="SessionName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FeeSetting_Session_FK">
+          <End Role="Session" Type="CollegeDBModel.Session" Multiplicity="1" />
+          <End Role="FeeSetting" Type="CollegeDBModel.FeeSetting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Session">
+              <PropertyRef Name="SessionName" />
+            </Principal>
+            <Dependent Role="FeeSetting">
+              <PropertyRef Name="SessionName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_UserProfile">
+          <End Role="UserProfile" Type="CollegeDBModel.UserProfile" Multiplicity="0..1" />
+          <End Role="Users" Type="CollegeDBModel.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="ProfileId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CollegeDBModelStoreContainer" CdmEntityContainer="CollegeDBEntities1">
+          <EntitySetMapping Name="CASTs">
+            <EntityTypeMapping TypeName="CollegeDBModel.CAST">
+              <MappingFragment StoreEntitySet="CAST">
+                <ScalarProperty Name="CastId" ColumnName="CastId" />
+                <ScalarProperty Name="CastName" ColumnName="CastName" />
+                <ScalarProperty Name="Sessionname" ColumnName="Sessionname" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Classes">
+            <EntityTypeMapping TypeName="CollegeDBModel.Class">
+              <MappingFragment StoreEntitySet="Class">
+                <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+                <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+                <ScalarProperty Name="sessionName" ColumnName="sessionName" />
+                <ScalarProperty Name="MaxPractical" ColumnName="MaxPractical" />
+                <ScalarProperty Name="MiniPractical" ColumnName="MiniPractical" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CoursesID" ColumnName="CoursesID" />
+                <ScalarProperty Name="CoursesType_Sessionname" ColumnName="CoursesType_Sessionname" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClassFeeDetails">
+            <EntityTypeMapping TypeName="CollegeDBModel.ClassFeeDetail">
+              <MappingFragment StoreEntitySet="ClassFeeDetails">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+                <ScalarProperty Name="FeeHeadID" ColumnName="FeeHeadID" />
+                <ScalarProperty Name="SeesionName" ColumnName="SeesionName" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoursesTypes">
+            <EntityTypeMapping TypeName="CollegeDBModel.CoursesType">
+              <MappingFragment StoreEntitySet="CoursesType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CoursesName" ColumnName="CoursesName" />
+                <ScalarProperty Name="C10PerCount" ColumnName="10PerCount" />
+                <ScalarProperty Name="C12PerCount" ColumnName="12PerCount" />
+                <ScalarProperty Name="GraducationPerCount" ColumnName="GraducationPerCount" />
+                <ScalarProperty Name="ExtraMaxPer" ColumnName="ExtraMaxPer" />
+                <ScalarProperty Name="Sessionname" ColumnName="Sessionname" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExtraCertificates">
+            <EntityTypeMapping TypeName="CollegeDBModel.ExtraCertificate">
+              <MappingFragment StoreEntitySet="ExtraCertificates">
+                <ScalarProperty Name="CertificateId" ColumnName="CertificateId" />
+                <ScalarProperty Name="CertificateName" ColumnName="CertificateName" />
+                <ScalarProperty Name="CertificatePersent" ColumnName="CertificatePersent" />
+                <ScalarProperty Name="SessionName" ColumnName="SessionName" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FeeGroups">
+            <EntityTypeMapping TypeName="CollegeDBModel.FeeGroup">
+              <MappingFragment StoreEntitySet="FeeGroup">
+                <ScalarProperty Name="FGroupId" ColumnName="FGroupId" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+                <ScalarProperty Name="SessionName" ColumnName="SessionName" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FeeHeads">
+            <EntityTypeMapping TypeName="CollegeDBModel.FeeHead">
+              <MappingFragment StoreEntitySet="FeeHead">
+                <ScalarProperty Name="FeeId" ColumnName="FeeId" />
+                <ScalarProperty Name="FeeGroupId" ColumnName="FeeGroupId" />
+                <ScalarProperty Name="SessionName" ColumnName="SessionName" />
+                <ScalarProperty Name="FeeeName" ColumnName="FeeeName" />
+                <ScalarProperty Name="FeeSection" ColumnName="FeeSection" />
+                <ScalarProperty Name="FeeType" ColumnName="FeeType" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FeeSettings">
+            <EntityTypeMapping TypeName="CollegeDBModel.FeeSetting">
+              <MappingFragment StoreEntitySet="FeeSetting">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+                <ScalarProperty Name="FromFeeHeadId" ColumnName="FromFeeHeadId" />
+                <ScalarProperty Name="ToFeeHeadId" ColumnName="ToFeeHeadId" />
+                <ScalarProperty Name="Operation" ColumnName="Operation" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="MaxLimit" ColumnName="MaxLimit" />
+                <ScalarProperty Name="SessionName" ColumnName="SessionName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Registrations">
+            <EntityTypeMapping TypeName="CollegeDBModel.Registration">
+              <MappingFragment StoreEntitySet="Registration">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+                <ScalarProperty Name="FormNo" ColumnName="FormNo" />
+                <ScalarProperty Name="RecNo" ColumnName="RecNo" />
+                <ScalarProperty Name="RegDate" ColumnName="RegDate" />
+                <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+                <ScalarProperty Name="CastId" ColumnName="CastId" />
+                <ScalarProperty Name="STitle" ColumnName="STitle" />
+                <ScalarProperty Name="StudentFName" ColumnName="StudentFName" />
+                <ScalarProperty Name="StudentLName" ColumnName="StudentLName" />
+                <ScalarProperty Name="FTitle" ColumnName="FTitle" />
+                <ScalarProperty Name="RegFee" ColumnName="RegFee" />
+                <ScalarProperty Name="C10MaxMarks" ColumnName="10MaxMarks" />
+                <ScalarProperty Name="C12MaxMarks" ColumnName="12MaxMarks" />
+                <ScalarProperty Name="GraducateMaxMarks" ColumnName="GraducateMaxMarks" />
+                <ScalarProperty Name="C10ObtenMarks" ColumnName="10ObtenMarks" />
+                <ScalarProperty Name="C12ObtenMarks" ColumnName="12ObtenMarks" />
+                <ScalarProperty Name="GraducateObtenMarks" ColumnName="GraducateObtenMarks" />
+                <ScalarProperty Name="C10Per" ColumnName="10Per" />
+                <ScalarProperty Name="C12Per" ColumnName="12Per" />
+                <ScalarProperty Name="GraducatePer" ColumnName="GraducatePer" />
+                <ScalarProperty Name="ExtraId1" ColumnName="ExtraId1" />
+                <ScalarProperty Name="ExtraPer1" ColumnName="ExtraPer1" />
+                <ScalarProperty Name="ExtraId2" ColumnName="ExtraId2" />
+                <ScalarProperty Name="ExtraPer2" ColumnName="ExtraPer2" />
+                <ScalarProperty Name="ExtraId3" ColumnName="ExtraId3" />
+                <ScalarProperty Name="ExtraPer3" ColumnName="ExtraPer3" />
+                <ScalarProperty Name="ExtraId4" ColumnName="ExtraId4" />
+                <ScalarProperty Name="ExtraPer4" ColumnName="ExtraPer4" />
+                <ScalarProperty Name="ExtraId5" ColumnName="ExtraId5" />
+                <ScalarProperty Name="ExtraPer5" ColumnName="ExtraPer5" />
+                <ScalarProperty Name="TotalExtraPer" ColumnName="TotalExtraPer" />
+                <ScalarProperty Name="TotalEducationPer" ColumnName="TotalEducationPer" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="SessionName" ColumnName="SessionName" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sessions">
+            <EntityTypeMapping TypeName="CollegeDBModel.Session">
+              <MappingFragment StoreEntitySet="Session">
+                <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+                <ScalarProperty Name="SessionName" ColumnName="SessionName" />
+                <ScalarProperty Name="Startdate" ColumnName="Startdate" />
+                <ScalarProperty Name="EndingDate" ColumnName="EndingDate" />
+                <ScalarProperty Name="DefaultIndic" ColumnName="DefaultIndic" />
+                <ScalarProperty Name="OpenIndic" ColumnName="OpenIndic" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserProfiles">
+            <EntityTypeMapping TypeName="CollegeDBModel.UserProfile">
+              <MappingFragment StoreEntitySet="UserProfile">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="CollegeDBModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Mob" ColumnName="Mob" />
+                <ScalarProperty Name="ProfileId" ColumnName="ProfileId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

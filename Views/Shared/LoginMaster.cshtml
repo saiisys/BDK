@@ -1,0 +1,90 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+  @Scripts.Render("~/bundles/jquery")
+	<meta charset="utf-8">
+	<title>@ViewBag.Title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<link id="bs-css" href="@Url.Content("~/Content/css/bootstrap-cerulean.css")" rel="stylesheet" type="text/css" />
+	
+	<style type="text/css">
+	  body {
+		padding-bottom: 40px;
+	  }
+	  .sidebar-nav {
+		padding: 9px 0;
+	  }
+	</style>
+     <link href="@Url.Content("~/Content/css/bootstrap-responsive.css")" rel="stylesheet" type="text/css" />
+  <link href="@Url.Content("~/Content/css/charisma-app.css")" rel="stylesheet" type="text/css" />
+  <link href="@Url.Content("~/Content/css/jquery-ui-1.8.21.custom.css")" rel="stylesheet" type="text/css" />
+  <link href="@Url.Content("~/Content/css/fullcalendar.css")" rel="stylesheet" type="text/css" />
+  <link href="@Url.Content("~/Content/css/fullcalendar.print.css")" rel="stylesheet" type="text/css" />
+  <link href="@Url.Content("~/Content/css/chosen.css")" rel="stylesheet" type="text/css" />
+  <link href="@Url.Content("~/Content/css/uniform.default.css")" rel="stylesheet" type="text/css" />
+  <link href="@Url.Content("~/Content/css/colorbox.css")" rel="stylesheet" type="text/css" />
+  <link href="@Url.Content("~/Content/css/jquery.cleditor.css")" rel="stylesheet" type="text/css" />
+  <link href="@Url.Content("~/Content/css/jquery.noty.css")" rel="stylesheet" type="text/css" />
+  <link href="@Url.Content("~/Content/css/noty_theme_default.css")" rel="stylesheet" type="text/css" />
+  <link href="@Url.Content("~/Content/css/elfinder.min.css")" rel="stylesheet" type="text/css" />
+  <link href="@Url.Content("~/Content/css/elfinder.theme.css")" rel="stylesheet" type="text/css" />
+  <link href="@Url.Content("~/Content/css/jquery.iphone.toggle.css")" rel="stylesheet" type="text/css" />
+  <link href="@Url.Content("~/Content/css/opa-icons.css")" rel="stylesheet" type="text/css" />
+  <link href="@Url.Content("~/Content/css/uploadify.css")" rel="stylesheet" type="text/css" />
+	
+	<link rel="shortcut icon" href="Content/favicon.ico">	
+</head>
+
+<body>
+		<div class="container-fluid">
+		<div class="row-fluid">
+		
+			<div class="row-fluid">
+				<div class="span12 center login-header">
+					<h2>Welcome Saiisys</h2>
+				</div>
+			</div>
+			
+
+
+            @ViewBag.result
+			<div class="row-fluid">
+				<div class="well span5 center login-box">
+					<div class="alert alert-info">
+						<h>
+                        @if(Convert.ToString(ViewBag.msg) != "")
+                        {
+                            @ViewBag.msg
+                        }
+                        
+
+
+                      Please login with your Username and Password.
+                        </h>
+					</div>
+					
+
+                 
+                        @RenderBody()
+
+						
+						
+				
+				</div>
+			</div>
+				</div>
+		
+	</div>
+
+	
+	
+		
+</body>
+</html>
+

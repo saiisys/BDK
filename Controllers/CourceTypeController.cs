@@ -7,6 +7,7 @@ using BDK.DB;
 
 namespace BDK.Controllers
 {
+    [Authorize]
     public class CourceTypeController : Controller
     {
         //
@@ -14,21 +15,16 @@ namespace BDK.Controllers
 
         CollegeDBEntities db = new CollegeDBEntities();
 
-        [Authorize]
+      
         public ActionResult Index()
         {
-            if (Session["User"] == null)
-            {
-                return View("CPanalIndex\\Index.cshtml");
-            }
-            else
-            {
+          
                 ViewBag.coursesTab = db.CoursesTypes.OrderByDescending(m => m.ID).ToList();
                 return View("CourceT");
-            }
+            
         }
 
-        [Authorize]
+    
         public ActionResult Save(CoursesType obj)
         {
            // if (ModelState.IsValid == true)
@@ -65,7 +61,7 @@ namespace BDK.Controllers
 
         }
 
-        [Authorize]
+      
         public ActionResult Edit(int id)
         {
             //CoursesType  _Cource = db.CoursesTypes.Where(m => m.ID == id);

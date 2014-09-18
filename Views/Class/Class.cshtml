@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
+@using (Html.BeginForm("Save", "Class", FormMethod.Post)) {
 <div class="box span12">
 					<div class="box-header well" data-original-title>
 						<h2><i class="icon-edit"></i> Form Elements</h2>
@@ -15,12 +15,37 @@
 						</div>
 					</div>
 
-@using (Html.BeginForm("Save", "Class", FormMethod.Post)) {
-     @Html.AntiForgeryToken()    
-					<div class="box-content">
+
+    
+				
+    <div class="box-content">
 						
 						  <fieldset>
-							@Html.ValidationSummary()
+						
+
+
+                              
+						            	 <div class="control-group">
+								        <label class="control-label" for="selectError">Course Type Select</label>
+								        <div class="controls">
+
+
+
+
+
+
+                                            @Html.DropDownListFor(m=>m.CoursesID ,new SelectList(@BDK.Controllers.ClassController.FillCombo(),"Value","Text"))
+								  @*<select id="selectError" data-rel="chosen">
+	                                @foreach (var obj in ViewBag.courseT)
+                                         {
+                                         }    
+									<option>@obj.CoursesName {id = }</option>
+								  </select>*@
+                                    
+								</div>
+							  </div>
+                              
+
 							<div class="control-group">
 							  <label class="control-label" for="typeahead">
                                  Class Name
@@ -29,12 +54,33 @@
 								@*<input type="text" class="span6 typeahead" id="SName" value="@Model.SessionName">*@
                                   @Html.TextBoxFor(m => m.ClassName  , new {@class="span6 typeahead", id="cname" })
                                   
-
-                                  
-
 							  </div>
-                                  @Html.HiddenFor(m => m.CastId )
-                                 @Html.HiddenFor(m => m.Sessionname  )
+
+                                 <label class="control-label" for="typeahead">
+                                 Max Practical
+							  </label>
+							  <div class="controls">
+								@*<input type="text" class="span6 typeahead" id="SName" value="@Model.SessionName">*@
+                                  @Html.TextBoxFor(m => m.MaxPractical   , new {@class="span6 typeahead", id="cname" })
+                                  
+							  </div>
+                                      <label class="control-label" for="typeahead">
+                                 Mini Practical
+							  </label>
+							  <div class="controls">
+								@*<input type="text" class="span6 typeahead" id="SName" value="@Model.SessionName">*@
+                                  @Html.TextBoxFor(m => m.MiniPractical    , new {@class="span6 typeahead", id="cname" })
+                                  
+							  </div>
+                             
+
+                                @Html.HiddenFor(m => m.ClassId  )
+                                 @Html.HiddenFor(m =>m.sessionName   )
+
+
+
+
+
 							</div>
 							
 							
@@ -50,11 +96,12 @@
 					</div>
                             
 			
-}
+    
  
 
     </div>
-<div class="box span12">
+}
+@*<div class="box span12">
 					<div class="box-header well" data-original-title>
 						<h2><i class="icon-user"></i> Members</h2>
 						<div class="box-icon">
@@ -98,4 +145,4 @@
 						  </tbody>
 					  </table>            
 					</div>
-				</div>
+				</div>*@

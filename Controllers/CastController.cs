@@ -19,11 +19,7 @@ namespace BDK.Controllers
       
         public ActionResult Index()
         {
-            if (Session["User"] == null)
-            {
-                return View ("CPanalIndex\\Index.cshtml");
-
-            }
+          
      
             ViewBag.CastList = db.CASTs.OrderBy(x=>x.CastId).ToList();
             return View();

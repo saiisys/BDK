@@ -9,19 +9,16 @@ using BDK.DB;
 
 namespace BDK.Controllers
 {
-      [Authorize]
+    [Authorize]
     public class CastController : Controller
     {
-        //
-        // GET: /Cast/
+     
         CollegeDBEntities db = new CollegeDBEntities();
        
       
         public ActionResult Index()
         {
-          
-     
-            ViewBag.CastList = db.CASTs.OrderBy(x=>x.CastId).ToList();
+            //ViewBag.CastList = db.CASTs.OrderBy(x=>x.CastId).ToList();
             return View();
         }
       
@@ -50,7 +47,7 @@ namespace BDK.Controllers
               db.SaveChanges();
               ModelState.Clear();
 
-              ViewBag.CastList = db.CASTs.OrderBy(x => x.CastId).ToList();
+             
           }
          
          
@@ -61,11 +58,12 @@ namespace BDK.Controllers
         {
             CAST _cast = db.CASTs.SingleOrDefault(s => s.CastId == Id);
 
-
-            ViewBag.CastList = db.CASTs.OrderBy(x => x.CastId).ToList();
-
             return View("Index", _cast);
         }
 
+        public static  List<CAST> FillGrid()
+        {
+            return( new CollegeDBEntities().CASTs.OrderByDescending(x => x.CastId).ToList());
+        }
     }
 }

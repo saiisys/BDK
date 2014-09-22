@@ -16,17 +16,7 @@ namespace BDK.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            if (Session["User"] == null)
-            {
-                return View ("CPanalIndex\\Index.cshtml");
-            }
-            else
-            {
-
-            lsession = db.Sessions.ToList();
-            ViewBag.SessionList = lsession;
             return View();
-            }
         }
 
         //public PartialViewResult _CustomerCreate()
@@ -65,8 +55,7 @@ namespace BDK.Controllers
                 db.SaveChanges();
                 ModelState.Clear();
 
-                lsession = db.Sessions.ToList();
-                ViewBag.SessionList = lsession;
+               
             }
                 return View("index");
             
@@ -82,6 +71,12 @@ namespace BDK.Controllers
                ViewBag.SessionList = lsession;
                return View("index",_session);
             
+        }
+        public static List<Session> FillGrid()
+        {
+            return (new CollegeDBEntities().Sessions.OrderByDescending(x => x.SessionId).ToList());
+
+
         }
     }
 }

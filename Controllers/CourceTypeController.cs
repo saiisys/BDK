@@ -19,7 +19,7 @@ namespace BDK.Controllers
         public ActionResult Index()
         {
           
-                ViewBag.coursesTab = db.CoursesTypes.OrderByDescending(m => m.ID).ToList();
+               
                 return View("CourceT");
             
         }
@@ -56,7 +56,7 @@ namespace BDK.Controllers
 
                 
           // }
-            ViewBag.coursesTab = db.CoursesTypes.OrderByDescending(m => m.ID).ToList();
+           
             return View("CourceT");
 
         }
@@ -71,6 +71,10 @@ namespace BDK.Controllers
             return View("CourceT", _Cource);
         }
 
+        public static List<CoursesType> FillGrid()
+        {
+            return (new CollegeDBEntities().CoursesTypes.OrderByDescending(x=>x.ID ).ToList());
+        }
 
     }
 }

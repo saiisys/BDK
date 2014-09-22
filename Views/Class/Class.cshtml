@@ -34,13 +34,8 @@
 
 
 
-                                            @Html.DropDownListFor(m=>m.CoursesID ,new SelectList(@BDK.Controllers.ClassController.FillCombo(),"Value","Text"))
-								  @*<select id="selectError" data-rel="chosen">
-	                                @foreach (var obj in ViewBag.courseT)
-                                         {
-                                         }    
-									<option>@obj.CoursesName {id = }</option>
-								  </select>*@
+                              @Html.DropDownListFor(m=>m.CoursesID ,new SelectList(@BDK.Controllers.ClassController.FillCombo(),"Value","Text"))
+								 
                                     
 								</div>
 							  </div>
@@ -72,8 +67,6 @@
                                   @Html.TextBoxFor(m => m.MiniPractical    , new {@class="span6 typeahead", id="cname" })
                                   
 							  </div>
-                             
-
                                 @Html.HiddenFor(m => m.ClassId  )
                                  @Html.HiddenFor(m =>m.sessionName   )
 
@@ -101,7 +94,7 @@
 
     </div>
 }
-@*<div class="box span12">
+<div class="box span12">
 					<div class="box-header well" data-original-title>
 						<h2><i class="icon-user"></i> Members</h2>
 						<div class="box-icon">
@@ -114,21 +107,27 @@
 						<table class="table table-striped table-bordered bootstrap-datatable datatable">
 						  <thead>
 							  <tr>
-								  <th>CastName</th>
-								  
+								  <th>Course Name :</th>
+								  <th>Class Name :</th>
+                                  <th>Max Practical :</th>
+                                  <th>Mini Practical :</th>
                                    <th>Action</th>
 							  </tr>
 						  </thead>   
 						  <tbody>
 							
 
-								@foreach (var obj in ViewBag.CastList)
+								@foreach (var obj in @BDK.Controllers.ClassController.Fillgrid())
         {<tr>
-            <td class="center">@obj.CastName</td>
-        			
+           
+            <td class="center"> @(new BDK.DB.CollegeDBEntities().CoursesTypes.Where(x=> x.ID == obj.CoursesID ).FirstOrDefault().CoursesName ) </td>
+        			<td class="center">@obj.ClassName </td>
+            <td class="center">@obj.MaxPractical  </td>
+            <td class="center">@obj.MiniPractical  </td>
+            
 								<td class="center">
 									
-									<a class="btn btn-info" href="@Url.Action("EditCast", new {id = obj.CastId})">
+									<a class="btn btn-info" href="@Url.Action("EditClass", new {ClassId = obj.ClassId })">
 										<i class="icon-edit icon-white"></i>  
 										Edit                                            
 									</a>
@@ -145,4 +144,4 @@
 						  </tbody>
 					  </table>            
 					</div>
-				</div>*@
+				</div>

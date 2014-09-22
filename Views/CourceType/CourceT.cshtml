@@ -111,7 +111,7 @@
 						  <tbody>
 							
 
-								@foreach (var obj in ViewBag.coursesTab)
+							@foreach (var obj in @BDK.Controllers.CourceTypeController.FillGrid())
         {<tr>
             <td class="center">@obj.CoursesName</td>
         			<td class="center">@obj.C10PerCount</td>

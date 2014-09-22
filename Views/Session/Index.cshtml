@@ -95,7 +95,7 @@
 						  </thead>   
 						  <tbody>
 							
-								@foreach (var obj in ViewBag.SessionList)
+					@foreach (var obj in  @BDK.Controllers.SessionController.FillGrid())
         {<tr>
             <td class="center">@obj.SessionName</td>
         <td class="center">@obj.Startdate</td>

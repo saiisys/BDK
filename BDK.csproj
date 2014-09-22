@@ -167,6 +167,7 @@
     <Compile Include="Controllers\ClassController.cs" />
     <Compile Include="Controllers\CourceTypeController.cs" />
     <Compile Include="Controllers\CPanalIndexController.cs" />
+    <Compile Include="Controllers\FeeGroupController.cs" />
     <Compile Include="Controllers\SessionController.cs" />
     <Compile Include="DB\CAST.cs">
       <DependentUpon>CollegeDBEntities.tt</DependentUpon>
@@ -584,6 +585,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\LoginMaster.cshtml" />
+    <Content Include="Views\FeeGroup\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -7,6 +7,7 @@ using BDK.DB;
 using System.Collections;
 namespace BDK.Controllers
 {
+    [Authorize ]
     public class ClassController : Controller
     {
         //
@@ -44,15 +45,15 @@ namespace BDK.Controllers
         public static List<SelectListItem> FillCombo()
         {
              SelectListItem s ;
-
+             List<SelectListItem> items = new List<SelectListItem>();
              s = new SelectListItem();
              s.Text = "------Select Courses Type--------";
              s.Value = "0";
              s.Selected = true;
-              
+             items.Add(s);
+
             var clientIDs = new CollegeDBEntities().CoursesTypes.Select(x => new { x.CoursesName, x.ID });
-            List<SelectListItem> items = new List<SelectListItem>();
-            items.Add(s);
+            
             foreach (var t in clientIDs)
             {
               s = new SelectListItem();
@@ -61,12 +62,27 @@ namespace BDK.Controllers
                 
                 items.Add(s);
             }
-           
-
          
             return items;
         }
-        
+
+
+
+        public static  List<Class> Fillgrid()
+        {
+        return (new CollegeDBEntities ().Classes.OrderByDescending(m => m.ClassId ).ToList());
+        }
+
+
+        public ActionResult EditClass( int ClassId)
+        {
+            Class _class = db.Classes.FirstOrDefault(X => X.ClassId == ClassId);
+
+            return View("Class", _class);
+
+
+        }
+
 
     }
 }

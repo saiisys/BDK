@@ -165,8 +165,10 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CastController.cs" />
     <Compile Include="Controllers\ClassController.cs" />
+    <Compile Include="Controllers\ClassFeeDetailsController.cs" />
     <Compile Include="Controllers\CourceTypeController.cs" />
     <Compile Include="Controllers\CPanalIndexController.cs" />
+    <Compile Include="Controllers\ExtraCertificatesController.cs" />
     <Compile Include="Controllers\FeeGroupController.cs" />
     <Compile Include="Controllers\FeeHeadController.cs" />
     <Compile Include="Controllers\SessionController.cs" />
@@ -556,6 +558,7 @@
       <DependentUpon>CollegeDBEntities.edmx</DependentUpon>
       <LastGenOutput>CollegeDBEntities.cs</LastGenOutput>
     </Content>
+    <Content Include="Views\ClassFeeDetails\Index.cshtml" />
     <None Include="Views\CPanalIndex\Index.cshtml" />
     <Content Include="Views\Session\Index.cshtml">
       <SubType>Code</SubType>
@@ -588,6 +591,7 @@
     <Content Include="Views\Shared\LoginMaster.cshtml" />
     <Content Include="Views\FeeGroup\Index.cshtml" />
     <Content Include="Views\FeeHead\Index.cshtml" />
+    <Content Include="Views\ExtraCertificates\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

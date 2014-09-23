@@ -34,6 +34,14 @@ namespace BDK.Controllers
 
 
             }
+            else
+            {
+                Class _class = db.Classes.Where(x => x.ClassId  == obj.ClassId).FirstOrDefault();
+                if (_class != null)
+                {
+                    db.Entry(_class).CurrentValues.SetValues(obj);
+                }
+            }
             db.SaveChanges();
             ModelState.Clear();
 

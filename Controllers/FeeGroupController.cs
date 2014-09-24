@@ -24,8 +24,8 @@ namespace BDK.Controllers
 
         public ActionResult Save(FeeGroup obj)
         {
-            if (ModelState.IsValid == true)
-            {
+            //if (ModelState.IsValid == true)
+            //{
                 if (obj.FGroupId == 0)
                 {
                     obj.FGroupId = Convert.ToInt32(db.FeeGroups.Max(x => (int?)x.FGroupId) ?? 0) + 1;
@@ -47,7 +47,7 @@ namespace BDK.Controllers
                 ModelState.Clear();
 
 
-            }
+            //}
 
 
             return View("Index");
